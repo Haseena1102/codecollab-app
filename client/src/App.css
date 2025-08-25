@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+.editor {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 16px;
+  background-color: #282c34;
+  color: white;
+  border: none;
+  outline: none;
+}

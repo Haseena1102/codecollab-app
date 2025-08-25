@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CodeCollab Test</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; }
+        #editor { width: 100%; height: 100vh; box-sizing: border-box; font-family: monospace; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <textarea id="editor"></textarea>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const editor = document.getElementById('editor');
+
+        editor.addEventListener('keyup', () => {
+            const code = editor.value;
+            socket.emit('code-change', code);
+        });
+
+        socket.on('code-change', (code) => {
+            editor.value = code;
+        });
+    </script>
+</body>
+</html>
