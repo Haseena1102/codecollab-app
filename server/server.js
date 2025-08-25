@@ -5,8 +5,12 @@ const path = require('path');
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server);
-
+const io = new Server(server, {
+  cors: {
+    origin: "*", // Allow connections from any origin
+    methods: ["GET", "POST"]
+  }
+});
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });

@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import './App.css';
 
 // Connect to the backend server
-const socket = io('http://localhost:5000');
+const socket = io('https://codecollab-server-haseena.onrender.com');
 
 function App() {
   const [code, setCode] = useState('');
